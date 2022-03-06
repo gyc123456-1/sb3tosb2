@@ -1074,7 +1074,7 @@ class ProjectConverter:
         if type(name) == str:
             return ('\xa0' if self.compat else '') + name
         else:
-            if self.compat:
+            if self.compat and (not name.startswith("☁")):
                 return ['concatenate:with:', '\xa0', name]
             else:
                 return name
